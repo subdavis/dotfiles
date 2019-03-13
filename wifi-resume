@@ -1,0 +1,15 @@
+#!/bin/sh
+set -e
+
+if [ "\$2" = "suspend" ] || [ "\$2" = "hybrid-sleep" ]; then
+    case "\$1" in
+        pre)
+            # do nothing
+            :
+            ;;
+        post)
+            /etc/pm/sleep.d/10_resume_wifi post
+            ;;
+    esac
+fi
+EOF

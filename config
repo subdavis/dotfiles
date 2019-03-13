@@ -52,8 +52,8 @@ bindsym Mod1+d exec --no-startup-id j4-dmenu-desktop
 # change focus
 bindsym Mod1+j focus left
 bindsym Mod1+k focus down
-bindsym Mod1+l focus up
-bindsym Mod1+semicolon focus right
+bindsym Mod1+i focus up
+bindsym Mod1+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym Mod1+Left focus left
@@ -64,8 +64,8 @@ bindsym Mod1+Right focus right
 # move focused window
 bindsym Mod1+Shift+j move left
 bindsym Mod1+Shift+k move down
-bindsym Mod1+Shift+l move up
-bindsym Mod1+Shift+semicolon move right
+bindsym Mod1+Shift+i move up
+bindsym Mod1+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym Mod1+Shift+Left move left
@@ -131,9 +131,9 @@ bindsym Mod1+Shift+9 move container to workspace 9
 bindsym Mod1+Shift+0 move container to workspace 10
 
 # reload the configuration file
-bindsym Mod1+Shift+i reload
+bindsym Mod1+Shift+r reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym Mod1+Shift+r restart
+bindsym Mod1+Shift+p restart
 # exit i3 (logs you out of your X session)
 bindsym Mod1+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
@@ -147,8 +147,8 @@ mode "resize" {
         # Pressing down will grow the window’s height.
         bindsym j           resize shrink width 10 px or 10 ppt
         bindsym k           resize grow height 10 px or 10 ppt
-        bindsym l           resize shrink height 10 px or 10 ppt
-        bindsym semicolon   resize grow width 10 px or 10 ppt
+        bindsym i           resize shrink height 10 px or 10 ppt
+        bindsym l           resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left        resize shrink width 10 px or 10 ppt
@@ -200,7 +200,7 @@ exec --no-startup-id /usr/bin/fluxgui &
 exec --no-startup-id twmnd &
 
 # i3lock
-bindsym Mod1+Shift+s exec --no-startup-id i3lock -i /home/brandon/cloud/pictures/Backgrounds/desert.jpg
+bindsym Mod1+Shift+s exec --no-startup-id i3lock -i /home/brandon/cloud/pictures/Backgrounds/pixelhogwarts.png
 
 # GAPS
 gaps inner 18

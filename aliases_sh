@@ -79,10 +79,12 @@ vaulterase () {
   rm ~/.vault/$1
 }
 vpnup () {
-  decrypt creds.txt
-  sudo openvpn --daemon --config ~/.ovpn/us366.nordvpn.com.tcp.ovpn
+  [ -z $1 ] && printf "Please specify a VPN provider. Options are \n$(ls ~/.ovpn)\n" && return 1
+  decrypt "$1.creds"
+  CFG="/home/$USER/.ovpn/$1.ovpn"
+  sudo openvpn --daemon --config $CFG
   sleep 2
-  vaulterase creds.txt
+  vaulterase "$1.creds"
 }
 vpndown () {
   sudo killall openvpn
