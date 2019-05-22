@@ -52,8 +52,9 @@ bindsym Mod1+d exec --no-startup-id j4-dmenu-desktop
 # change focus
 bindsym Mod1+j focus left
 bindsym Mod1+k focus down
-bindsym Mod1+l focus up
 bindsym Mod1+semicolon focus right
+bindsym Mod1+l focus right
+bindsym Mod1+i focus up
 
 # alternatively, you can use the cursor keys:
 bindsym Mod1+Left focus left
@@ -64,8 +65,9 @@ bindsym Mod1+Right focus right
 # move focused window
 bindsym Mod1+Shift+j move left
 bindsym Mod1+Shift+k move down
-bindsym Mod1+Shift+l move up
 bindsym Mod1+Shift+semicolon move right
+bindsym Mod1+Shift+l move right
+bindsym Mod1+Shift+i move up
 
 # alternatively, you can use the cursor keys:
 bindsym Mod1+Shift+Left move left
@@ -147,8 +149,9 @@ mode "resize" {
         # Pressing down will grow the window’s height.
         bindsym j           resize shrink width 10 px or 10 ppt
         bindsym k           resize grow height 10 px or 10 ppt
-        bindsym l           resize shrink height 10 px or 10 ppt
         bindsym semicolon   resize grow width 10 px or 10 ppt
+        bindsym l           resize grow width 10 px or 10 ppt
+        bindsym i           resize shrink height 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left        resize shrink width 10 px or 10 ppt
@@ -177,9 +180,6 @@ bar {
         }
 }
 
-# Set background
-exec --no-startup-id feh --bg-scale /home/brandon/cloud/pictures/Backgrounds/pixelhogwarts.jpg
-
 # Start InSync
 exec --no-startup-id /usr/bin/insync start
 
@@ -200,13 +200,13 @@ exec --no-startup-id /usr/bin/fluxgui &
 exec --no-startup-id twmnd &
 
 # i3lock
-bindsym Mod1+Shift+s exec --no-startup-id i3lock -i /home/brandon/cloud/pictures/Backgrounds/desert.jpg
+bindsym Mod1+Shift+s exec --no-startup-id i3lock -i /home/brandon/cloud/pictures/Backgrounds/lockbig.png
 
 # GAPS
-gaps inner 18
+gaps inner 12
 gaps outer 0
 # for_window [class="^.*"] border pixel 0 # leave title bar undrawn
-new_window pixel 3
+new_window pixel 2
 
 # Media keys
 # Pulse Audio controls
@@ -233,3 +233,8 @@ client.focused #69A3B4 #2A6F82 #ffffff #69A3B4 #69A3B4
 # bindsym --release Mod1+s exec --no-startup-id xdotool key --clearmodifiers ctrl+s
 # bindsym --release Mod1+z exec --no-startup-id xdotool key --clearmodifiers ctrl+z
 # bindsym --release Mod1+f exec --no-startup-id xdotool key --clearmodifiers ctrl+f
+
+exec --no-startup-id /home/brandon/github.com/subdavis/dotfiles/xrandr.sh
+
+# Set background
+exec --no-startup-id feh  --bg-fill /home/brandon/cloud/pictures/Backgrounds/hexagony.jpg  --bg-fill /home/brandon/cloud/pictures/Backgrounds/dawny.jpg
