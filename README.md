@@ -1,12 +1,13 @@
-Q# dotfiles
-A collection of my configuration and other dotfiles
+# dotfiles
 
-# Things to install
+A collection of my configuration and other dotfiles for KDE + i3-gaps on Ubuntu 18.04.
+
+## Things to install
 
 ## System
 
 * Compton for compositing
-* i3-gaps 
+* i3-gaps
 * hub for git
 * yarn
 * git-prompt (optional)
@@ -59,6 +60,9 @@ ln -s $DFPATH/xinit ~/.xinit
 
 rm ~/.profile
 ln -s $DFPATH/profile ~/.profile
+
+rm ~/.Xresources
+ln -s $DFPATH/Xresources ~/.Xresources
 
 rm ~/.config/plasma-workspace/env/wm.sh
 ln -s $DFPATH/wm.sh ~/.config/plasma-workspace/env/wm.sh

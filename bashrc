@@ -94,6 +94,7 @@ alias ll='ls -alF --git'
 alias la='ls -A'
 alias l='ls -CF'
 alias yarn=/usr/local/bin/yarn
+alias pip=/usr/bin/pip3
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
