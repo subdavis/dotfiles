@@ -132,7 +132,7 @@ export NVM_DIR="$HOME/.nvm"
 alias subl=/opt/sublime_text/sublime_text
 alias git=hub
 
-if [ "$TERM" != "linux" ]; then
-    source ~/github.com/pureline/pureline ~/.pureline.conf
-    export PS1="$PS1\n~$"
-fi
+#if [ "$TERM" != "linux" ]; then
+#    source ~/github.com/pureline/pureline ~/.pureline.conf
+#    export PS1="$PS1\n~$"
+#fi

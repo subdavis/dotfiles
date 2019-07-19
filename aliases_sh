@@ -68,23 +68,13 @@ extract () {
     echo "'$1' is not a valid file"
   fi
 }
-encrypt () {
-  gpg --output ~/.vault/$1.gpg --encrypt --recipient local@top-space-man ~/.vault/$1 \
-    && rm ~/.vault/$1
-}
-decrypt () {
-  gpg --output ~/.vault/$1 --decrypt ~/.vault/$1.gpg
-}
-vaulterase () {
-  rm ~/.vault/$1
-}
 vpnup () {
   [ -z $1 ] && printf "Please specify a VPN provider. Options are \n$(ls ~/.ovpn)\n" && return 1
-  decrypt "$1.creds"
+  USER=$(pass VPN/$1 | sed -n 1p)
+  PASS=$(pass VPN/$1 | sed -n 2p)
   CFG="/home/$USER/.ovpn/$1.ovpn"
-  sudo openvpn --daemon --config $CFG
+  sudo USERNAME=$USER PASSWORD=$PASS openvpn --daemon --config $CFG
   sleep 2
-  vaulterase "$1.creds"
 }
 vpndown () {
   sudo killall openvpn
@@ -94,6 +84,9 @@ gpush () {
     echo "Pushing to $o";
     git push $o;
   done; 
+}
+gpushsu () {
+  git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
 }
 gmirror () {
   mkdir -p ~/github.com/mirrors
