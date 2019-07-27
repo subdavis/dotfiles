@@ -13,7 +13,11 @@ ssh-addkeys() {
   done
 }
 pysrc() {
-  source bin/activate
+  if [ -e venv ]; then
+    source venv/bin/activate
+  else
+    source bin/activate
+  fi
 }
 pywinsrc() {
   source Scripts/activate

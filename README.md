@@ -1,26 +1,32 @@
+![screenshot](screenshots/dirty.png)
+
 # dotfiles
 
-A collection of my configuration and other dotfiles for KDE + i3-gaps on Ubuntu 18.04.
+A collection of my configuration and other dotfiles.
+
+* KDE Ubuntu + 3-gaps
+* LXDE Ubuntu + i3-gaps
 
 ## Things to install
 
-## System
+```bash
+sudo apt install i3-wm i3 i3lock
+sudo apt install compton
+sudo apt install curl
+sudo apt install virtualenv
+sudo apt install yarn npm
+sudo npm install -g n
+sudo n lts
+sudo apt install dmenu j4-dmenu-desktop
+sudo apt install neofetch
+sudo apt install mosh
+sudo apt install chromium-browser
+```
 
-* Compton for compositing
-* i3-gaps
-* hub for git
-* yarn
-* git-prompt (optional)
-* https://github.com/chris-marsh/pureline
-* twmnd
-* dmenu
-* neofetch
-* mosh
-* pureline
-* docker CE
+## Other Applications
 
-## Applications
-
+* [Hub for Git](https://github.com/github/hub/releases)
+* [Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
 * Sublime Text to `/opt/sublime_text/sublime_text`
 * Insync (deb) https://www.insynchq.com/downloads
 * Spotify (snap)
@@ -31,41 +37,8 @@ A collection of my configuration and other dotfiles for KDE + i3-gaps on Ubuntu 
 # Put stuff in its place
 
 ```bash
-export DFPATH=~/github.com/subdavis/dotfiles
-mkdir -p ~/.config/brandon
-mkdir -p ~/.config/i3
-mkdir -p ~/.config/i3status
-mkdir -p ~/.config/plasma-workspace/env
-
-rm ~/.config/compton.conf
-ln -s $DFPATH/compton.conf ~/.config/compton.conf
-
-rm ~/.bashrc
-ln -s $DFPATH/bashrc ~/.bashrc
-
-rm ~/.config/brandon/aliases_sh
-ln -s $DFPATH/aliases_sh ~/.config/brandon/aliases_sh
-
-rm  ~/.config/i3/config
-ln -s $DFPATH/config  ~/.config/i3/config
-
-rm ~/.config/i3status/config
-ln -s $DFPATH/i3status.conf ~/.config/i3status/config
-
-rm ~/.pureline.conf
-ln -s $DFPATH/pureline.conf ~/.pureline.conf
-
-rm ~/.xinit
-ln -s $DFPATH/xinit ~/.xinit
-
-rm ~/.profile
-ln -s $DFPATH/profile ~/.profile
-
-rm ~/.Xresources
-ln -s $DFPATH/Xresources ~/.Xresources
-
-rm ~/.config/plasma-workspace/env/wm.sh
-ln -s $DFPATH/wm.sh ~/.config/plasma-workspace/env/wm.sh
+# Run install to place all the dotfiles in the right places
+./install.sh
 ```
 
 ## Setting up i3 on KDE
@@ -79,3 +52,11 @@ ln -s $DFPATH/wm.sh ~/.config/plasma-workspace/env/wm.sh
 * Sublime text: `"dpi_scale": 2.0` in preferences
 * Firefox: ????
 * Misc: https://wiki.archlinux.org/index.php/HiDPI
+
+## Various other setup
+
+```bash
+sudo update-alternatives --config x-terminal-emulator
+```
+
+* Touchpad Synaptics https://askubuntu.com/questions/773595/how-can-i-disable-touchpad-while-typing-on-ubuntu-16-04-syndaemon-isnt-working
