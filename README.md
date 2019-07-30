@@ -1,7 +1,6 @@
-Q# dotfiles
-A collection of my configuration and other dotfiles
+# dotfiles
 
-# Things to install
+A collection of my configuration and other dotfiles
 
 ## System
 
@@ -17,6 +16,19 @@ A collection of my configuration and other dotfiles
 * mosh
 * pureline
 * docker CE
+* devilspie
+
+```bash
+sudo apt install yarn
+sudo apt install devilspie
+sudo apt install twmnd
+sudo apt install dmenu
+sudo apt install mosh
+sudo apt install neofetch
+sudo apt install docker-ce
+sudo apt install pass
+sudo apt install compton
+```
 
 ## Applications
 
@@ -27,13 +39,14 @@ A collection of my configuration and other dotfiles
 * Postman `/opt/Postman`
 * VS Code
 
-# Put stuff in its place
+## Put stuff in place
 
 ```bash
 export DFPATH=~/github.com/subdavis/dotfiles
 mkdir -p ~/.config/brandon
 mkdir -p ~/.config/i3
 mkdir -p ~/.config/i3status
+mkdir -p ~/.devilspie
 mkdir -p ~/.config/plasma-workspace/env
 
 rm ~/.config/compton.conf
@@ -62,6 +75,9 @@ ln -s $DFPATH/profile ~/.profile
 
 rm ~/.config/plasma-workspace/env/wm.sh
 ln -s $DFPATH/wm.sh ~/.config/plasma-workspace/env/wm.sh
+
+rm ~/.devilspie/vscode_transparent.ds
+ln -s $DFPATH/vscode_transparent.ds ~/.devilspie/vscode_transparent.ds
 ```
 
 ## Setting up i3 on KDE

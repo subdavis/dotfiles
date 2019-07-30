@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Passmenu
+Comment=Passmenu
+Exec=/home/brandon/apps/passmenu
+Categories=Application;
+Version=1.0
+Type=Application
+Terminal=1
+
