@@ -21,6 +21,7 @@ sudo apt install dmenu j4-dmenu-desktop
 sudo apt install neofetch
 sudo apt install mosh
 sudo apt install chromium-browser
+sudo apt install ukuu
 ```
 
 ## Other Applications

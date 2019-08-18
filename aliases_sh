@@ -33,12 +33,6 @@ above() {
 beside() {
   sudo xrandr --output VGA1 --right-of eDP1 --mode 1920x1080
 }
-deploy-helpq() {
-  cd ~/gitcode/HELPq && DEPLOY_HOSTNAME=galaxy.meteor.com meteor deploy [help.hacknc.com] --settings settings.json 
-}
-mountpod() {
-  sudo mount -o uid=1000 /dev/sdb /media/ipod/
-}
 cueflac(){
   # JUST A TEMPLATE
   mkdir tracks && shnsplit -f *.cue -t %n-%t -d tracks -o flac *.flac
@@ -73,17 +67,6 @@ extract () {
   else
     echo "'$1' is not a valid file"
   fi
-}
-vpnup () {
-  [ -z $1 ] && printf "Please specify a VPN provider. Options are \n$(ls ~/.ovpn)\n" && return 1
-  USER=$(pass VPN/$1 | sed -n 1p)
-  PASS=$(pass VPN/$1 | sed -n 2p)
-  CFG="/home/$USER/.ovpn/$1.ovpn"
-  sudo USERNAME=$USER PASSWORD=$PASS openvpn --daemon --config $CFG
-  sleep 2
-}
-vpndown () {
-  sudo killall openvpn
 }
 gpush () {
   for o in $(git remote show); do
@@ -143,6 +126,9 @@ bright () {
   # BRIGHTNESS=`xrandr --verbose | grep -m 1 -i brightness | cut -f2 -d ' '`
   BRIGHTNESS=`bc -l <<< "$1/10"`
   xrandr --output $ACTIVE_DISPLAY --brightness $BRIGHTNESS
+}
+shs() {
+  python -m SimpleHTTPServer 7000
 }
 # alias pass=grepass
 complete -F _pass grepass
