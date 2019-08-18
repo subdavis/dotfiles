@@ -18,6 +18,9 @@ pysrc() {
 pywinsrc() {
   source Scripts/activate
 }
+shs() {
+  python -m SimpleHTTPServer 7000
+}
 nmcycle() {
   # Restart the network manager service
   sudo service network-manager restart

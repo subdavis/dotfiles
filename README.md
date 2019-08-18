@@ -91,3 +91,9 @@ ln -s $DFPATH/vscode_transparent.ds ~/.devilspie/vscode_transparent.ds
 * Sublime text: `"dpi_scale": 2.0` in preferences
 * Firefox: ????
 * Misc: https://wiki.archlinux.org/index.php/HiDPI
+
+# Bluetooth
+
+https://mxlinux.org/forum/viewtopic.php?t=39597
+https://bugs.freedesktop.org/show_bug.cgi?id=97064
+https://wiki.archlinux.org/index.php/Bluetooth_headset#Configuration_via_CLI
