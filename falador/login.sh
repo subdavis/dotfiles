@@ -1,9 +1,8 @@
 #!/bin/bash
 
-sleep 0.1
+sleep 0.2
 
 feh  --bg-fill /home/brandon/cloud/pictures/Backgrounds/Firefly.png
 
 syndaemon -i 1 -KRd -t
-/usr/bin/nm-applet
-/usr/bin/insync start
+synclient  VertScrollDelta=-27 # Reverse synaptics natural scroll

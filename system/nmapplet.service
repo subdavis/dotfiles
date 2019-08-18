@@ -1,0 +1,10 @@
+[Unit]
+Description=nmapplet
+
+[Service]
+EnvironmentFile=/home/brandon/.config/systemd/user/profile.env
+TimeoutStartSec=0
+ExecStart=/usr/bin/nm-applet
+
+[Install]
+WantedBy=default.target

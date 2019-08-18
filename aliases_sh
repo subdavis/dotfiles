@@ -128,3 +128,21 @@ findbigfiles () {
 wificonnect () {
   nmcli device wifi con "$1" password "$2"
 }
+grepass () {
+  last="${@: -1}"
+  count=$#
+  if [ ! -z $1 ] && [[ $last != *"/"* ]] && [[ $last != *"--"* ]]; then
+    pass ${@:1:$((count-1))} | grep $last | sed "s/$last:\s//"
+  else
+    pass $@;
+  fi
+}
+bright () {
+  XRANDR=`xrandr --verbose`
+  ACTIVE_DISPLAY=`xrandr | grep " connected " | awk '{ print$1 }'`
+  # BRIGHTNESS=`xrandr --verbose | grep -m 1 -i brightness | cut -f2 -d ' '`
+  BRIGHTNESS=`bc -l <<< "$1/10"`
+  xrandr --output $ACTIVE_DISPLAY --brightness $BRIGHTNESS
+}
+# alias pass=grepass
+complete -F _pass grepass

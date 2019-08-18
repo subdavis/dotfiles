@@ -45,7 +45,7 @@ sudo apt install chromium-browser
 
 * Use the plasma profile from ssdm-greeter, don't select i3.  This is required to use KDE themes from within i3.
 * In KDE theme settings, set `Workspace Theme -> Splash Screen -> None`
-* Set the DPI `xrandr --dpi 144`
+* Set the DPI `xrandr --dpi 144` (deprecated in fabor of Xresources approach)
 
 ## Setting DPI elsewhere....
 
@@ -57,6 +57,11 @@ sudo apt install chromium-browser
 
 ```bash
 sudo update-alternatives --config x-terminal-emulator
+
+# dconf backup and restore
+dconf dump /org/gnome/terminal/ gnome-terminal.conf
+dconf load /org/gnome/termina/ < gnome-terminal.conf
 ```
 
 * Touchpad Synaptics https://askubuntu.com/questions/773595/how-can-i-disable-touchpad-while-typing-on-ubuntu-16-04-syndaemon-isnt-working
+* dconf backup/restore https://github.com/linuxmint/Cinnamon/wiki/Backing-up-and-restoring-your-cinnamon-settings-(dconf)

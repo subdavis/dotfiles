@@ -194,7 +194,7 @@ exec --no-startup-id /usr/bin/fluxgui &
 exec --no-startup-id twmnd &
 
 # i3lock
-bindsym Mod1+Shift+s exec --no-startup-id i3lock -i ~/cloud/pictures/Backgrounds/Firefly.png
+bindsym Mod1+Shift+s exec --no-startup-id i3lock -i ~/cloud/pictures/Backgrounds/lockscreen.png
 
 # GAPS
 gaps inner 16
@@ -210,8 +210,10 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #d
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Brightness keys
-bindsym XF86MonBrightnessUp exec --no-startup-id light -A 15 # increase screen brightness
-bindsym XF86MonBrightnessDown exec  --no-startup-id light -U 15 # decrease screen brightness
+# bindsym XF86MonBrightnessUp exec --no-startup-id light -A 15 # increase screen brightness
+# bindsym XF86MonBrightnessDown exec  --no-startup-id light -U 15 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id xrandr --output $(xrandr | grep " connected " | awk '{ print$1 }') --brightness 1.0
+bindsym XF86MonBrightnessDown exec --no-startup-id xrandr --output $(xrandr | grep " connected " | awk '{ print$1 }') --brightness 0.5
 
 bindsym XF86AudioPlay exec  --no-startup-id playerctl play
 bindsym XF86AudioPause exec  --no-startup-id playerctl pause

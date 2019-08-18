@@ -3,6 +3,7 @@ mkdir -p ~/.config/brandon
 mkdir -p ~/.config/i3
 mkdir -p ~/.config/i3status
 mkdir -p ~/.config/plasma-workspace/env
+mkdir -p ~/.config/systemd/user
 
 rm ~/.config/compton.conf
 ln -s $DFPATH/compton.conf ~/.config/compton.conf
@@ -40,6 +41,15 @@ ln -s $DFPATH/desktop.conf ~/.config/lxsession/Lubuntu/desktop.conf
 rm ~/.config/lxsession/Lubuntu/autostart
 ln -s $DFPATH/autostart ~/.config/lxsession/Lubuntu/autostart
 
+# Systemd stuff
+rm ~/.config/systemd/user/profile.env
+ln -s $DFPATH/system/$HOSTNAME.profile.env ~/.config/systemd/user/profile.env
+
+for f in $(ls system/); do
+    rm ~/.config/systemd/user/$f
+    ln -s $DFPATH/system/$f ~/.config/systemd/user/$f
+done
+
 # Disable light-locker because it's trash
 if [ -e /etc/xdg/autostart/light-locker.desktop ]; then
     sudo mv /etc/xdg/autostart/light-locker.desktop /etc/xdg/autostart/light-locker.desktop.bak
@@ -51,3 +61,5 @@ xfconf-query -c xfce4-session -p /general/LockCommand -s "lxlock" --create -t st
 # Move host-specific files into place
 rm ~/.config/login.sh
 ln -s $DFPATH/$HOSTNAME/login.sh ~/.config/login.sh
+
+# Enable user services
