@@ -56,11 +56,18 @@ sudo apt install chromium-browser
 ## Various other setup
 
 ```bash
+# set gnome-terminal as default emulator
 sudo update-alternatives --config x-terminal-emulator
 
 # dconf backup and restore
 dconf dump /org/gnome/terminal/ gnome-terminal.conf
 dconf load /org/gnome/termina/ < gnome-terminal.conf
+
+# vpn stuff
+sudo apt install network-manager-openvpn
+nmcli connection import type openvpn file NAME.ovpn
+nmcli c modify NAME vpn.user-name "value"
+nmcli c up NAME --ask
 ```
 
 * Touchpad Synaptics https://askubuntu.com/questions/773595/how-can-i-disable-touchpad-while-typing-on-ubuntu-16-04-syndaemon-isnt-working

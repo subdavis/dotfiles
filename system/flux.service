@@ -1,0 +1,10 @@
+[Unit]
+Description=flux
+
+[Service]
+EnvironmentFile=/home/brandon/.config/systemd/user/profile.env
+TimeoutStartSec=0
+ExecStart=/usr/bin/fluxgui
+
+[Install]
+WantedBy=default.target
