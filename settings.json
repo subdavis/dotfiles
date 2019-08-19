@@ -1,0 +1,24 @@
+{
+  "window.zoomLevel": 1,
+  "files.watcherExclude": {
+    "./.git/objects/**": true,
+    "./.git/subtree-cache/**": true,
+    "./serverless_ingest/node_modules/**": true,
+    "./serverless_ingest/venv/**": true,
+    "./serverless_ingest/.serverless/**": true,
+  },
+  "editor.tabSize": 2,
+  "files.insertFinalNewline": true,
+  "workbench.activityBar.visible": true,
+  "workbench.statusBar.visible": true,
+  "window.menuBarVisibility": "toggle",
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.largeFileOptimizations": false,
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "editor.multiCursorModifier": "alt"
+}
