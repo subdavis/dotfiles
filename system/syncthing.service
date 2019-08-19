@@ -1,10 +1,11 @@
 [Unit]
 Description=Syncthing
+Wants=docker.service
+BindsTo=graphical-session.target
 
 [Service]
 EnvironmentFile=/home/brandon/.config/systemd/user/profile.env
 TimeoutStartSec=0
-ExecStartPre=/bin/sleep 3
 ExecStartPre=-/usr/bin/docker kill syncthing
 ExecStartPre=-/usr/bin/docker rm syncthing
 ExecStart=/usr/bin/docker run --restart=always \

@@ -1,5 +1,6 @@
 [Unit]
 Description=nmapplet
+BindsTo=graphical-session.target
 
 [Service]
 EnvironmentFile=/home/brandon/.config/systemd/user/profile.env

@@ -1,11 +1,11 @@
 [Unit]
-Description=flux
+Description=compton
 BindsTo=graphical-session.target
 
 [Service]
 EnvironmentFile=/home/brandon/.config/systemd/user/profile.env
 TimeoutStartSec=0
-ExecStart=/usr/bin/fluxgui
+ExecStart=/usr/bin/compton -cCF
 
 [Install]
 WantedBy=default.target

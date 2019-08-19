@@ -55,6 +55,11 @@ if [ -e /etc/xdg/autostart/light-locker.desktop ]; then
     sudo mv /etc/xdg/autostart/light-locker.desktop /etc/xdg/autostart/light-locker.desktop.bak
 fi
 
+# Disable network manager too, manage in userspace
+if [ -e /etc/xdg/autostart/nm-applet.desktop ]; then
+    sudo mv /etc/xdg/autostart/nm-applet.desktop /etc/xdg/autostart/nm-applet.desktop.bak
+fi
+
 # https://wiki.archlinux.org/index.php/Xfce#Lock_the_screen
 xfconf-query -c xfce4-session -p /general/LockCommand -s "lxlock" --create -t string
 
@@ -63,3 +68,8 @@ rm ~/.config/login.sh
 ln -s $DFPATH/$HOSTNAME/login.sh ~/.config/login.sh
 
 # Enable user services
+systemctl --user daemon-reload
+systemctl --user enable compton
+systemctl --user enable flux
+systemctl --user enable nmapplet
+systemctl --user enable syncthing
