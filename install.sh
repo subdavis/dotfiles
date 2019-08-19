@@ -41,6 +41,9 @@ ln -s $DFPATH/desktop.conf ~/.config/lxsession/Lubuntu/desktop.conf
 rm ~/.config/lxsession/Lubuntu/autostart
 ln -s $DFPATH/autostart ~/.config/lxsession/Lubuntu/autostart
 
+rm ~/.config/autostart/nm-applet.desktop
+ln -s $DFPATH/nm-applet.desktop ~/.config/autostart/nm-applet.desktop
+
 # Systemd stuff
 rm ~/.config/systemd/user/profile.env
 ln -s $DFPATH/system/$HOSTNAME.profile.env ~/.config/systemd/user/profile.env
@@ -69,7 +72,4 @@ ln -s $DFPATH/$HOSTNAME/login.sh ~/.config/login.sh
 
 # Enable user services
 systemctl --user daemon-reload
-systemctl --user enable compton
-systemctl --user enable flux
-systemctl --user enable nmapplet
 systemctl --user enable syncthing

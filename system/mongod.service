@@ -1,0 +1,15 @@
+[Unit]
+Description=Mongodb
+
+[Service]
+ExecStartPre=-/usr/bin/docker kill mongodb
+ExecStartPre=-/usr/bin/docker rm mongodb
+ExecStartPre=/bin/sleep 1
+ExecStart=/usr/bin/docker run --name=mongodb \
+    -v ${MOUNT_ROOT}/mongodb/:/data/db \
+    -p 27017:27017 \
+    --restart=always \
+    mongo
+
+[Install]
+WantedBy=default.target
