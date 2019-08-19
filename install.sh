@@ -4,6 +4,8 @@ mkdir -p ~/.config/i3
 mkdir -p ~/.config/i3status
 mkdir -p ~/.config/plasma-workspace/env
 mkdir -p ~/.config/systemd/user
+mkdir -p ~/.config/autostart
+mkdir -p ~/.config/Code/User
 
 rm ~/.config/compton.conf
 ln -s $DFPATH/compton.conf ~/.config/compton.conf
@@ -30,7 +32,7 @@ rm ~/.profile
 ln -s $DFPATH/profile ~/.profile
 
 rm ~/.Xresources
-ln -s $DFPATH/Xresources ~/.Xresources
+ln -s $DFPATH/Xresources-$HOSTNAME ~/.Xresources
 
 rm ~/.config/plasma-workspace/env/wm.sh
 ln -s $DFPATH/wm.sh ~/.config/plasma-workspace/env/wm.sh

@@ -171,7 +171,8 @@ bindsym Mod1+r mode "resize"
 bar {
         status_command i3status
         # status_command /home/brandon/.config/i3/i3status.sh
-        tray_output eDP-1
+        # tray_output eDP-1
+        tray_output DisplayPort-2
         position top
         height 34
         font pango:DejaVu Sans Mono 12

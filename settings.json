@@ -20,5 +20,6 @@
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
-  "editor.multiCursorModifier": "alt"
+  "editor.multiCursorModifier": "alt",
+  "workbench.colorTheme": "Monokai"
 }

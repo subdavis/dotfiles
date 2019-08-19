@@ -7,6 +7,5 @@ sleep 0.2
 
 sleep 0.2 # sleep before feh
 
-feh  --bg-fill /home/brandon/cloud/pictures/Backgrounds/hexagony.jpg  --bg-fill /home/brandon/cloud/pictures/Backgrounds/dawny.jpg
-syndaemon -i 1 -KRd -t
-synclient  VertScrollDelta=-27
+feh  --bg-fill /home/brandon/github.com/subdavis/dotfiles/images/firefly.png  --bg-fill /home/brandon/github.com/subdavis/dotfiles/images/firefly.png
+
