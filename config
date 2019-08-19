@@ -196,7 +196,7 @@ exec --no-startup-id /usr/bin/fluxgui &
 exec --no-startup-id twmnd &
 
 # i3lock
-bindsym Mod1+Shift+s exec --no-startup-id i3lock -i ~/cloud/pictures/Backgrounds/lockscreen.png
+bindsym Mod1+Shift+s exec --no-startup-id i3lock -i /home/brandon/github.com/subdavis/dotfiles/images/firefly.png -i /home/brandon/github.com/subdavis/dotfiles/images/firefly.png
 
 # GAPS
 gaps inner 16

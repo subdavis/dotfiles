@@ -15,8 +15,10 @@ ssh-addkeys() {
 pysrc() {
   if [ -e venv ]; then
     source venv/bin/activate
-  else
+  elif [ -e bin/ ]; then
     source bin/activate
+  else
+    virtualenv -p python3 venv/
   fi
 }
 pywinsrc() {
