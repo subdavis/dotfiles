@@ -44,6 +44,9 @@ ln -s $DFPATH/autostart ~/.config/lxsession/Lubuntu/autostart
 rm ~/.config/autostart/nm-applet.desktop
 ln -s $DFPATH/nm-applet.desktop ~/.config/autostart/nm-applet.desktop
 
+rm ~/.config/Code/User/settings.json
+ln -s  $DFPATH/settings.json ~/.config/Code/User/settings.json
+
 # Systemd stuff
 rm ~/.config/systemd/user/profile.env
 ln -s $DFPATH/system/$HOSTNAME.profile.env ~/.config/systemd/user/profile.env
