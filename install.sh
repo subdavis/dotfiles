@@ -1,7 +1,9 @@
+#!/bin/bash
+
 export DFPATH=~/github.com/subdavis/dotfiles
 
 symlink() {
-    pushd $1
+    pushd $1 > /dev/null
     for f in $(find . ! -path . | sed "s|^\./||"); do
         if [ -d $f ]; then
             mkdir -p $2$f
@@ -10,22 +12,29 @@ symlink() {
             ln -s $(pwd)/$f $2$f
         fi
     done;
-    popd
+    popd > /dev/null
 }
 
-symlink $(pwd)/home ~/
-symlink $(pwd)/$HOSTNAME/home ~/
+if [ "$USER" == "root" ]; then
 
-# Disable light-locker because it's trash
-if [ -e /etc/xdg/autostart/light-locker.desktop ]; then
-    sudo mv /etc/xdg/autostart/light-locker.desktop /etc/xdg/autostart/light-locker.desktop.bak
+    echo "RUN AS ROOT"
+
+    [ -d root/ ] && symlink $(pwd)/root /
+    [ -d $HOSTNAME/root ] && symlink $(pwd)/$HOSTNAME/root /
+
+    # Disable light-locker
+    [ -e /etc/xdg/autostart/light-locker.desktop ] && mv /etc/xdg/autostart/light-locker.desktop /etc/xdg/autostart/light-locker.desktop.bak
+    # Disable network manage applet, manage in userspace
+    [ -e /etc/xdg/autostart/nm-applet.desktop ] && mv /etc/xdg/autostart/nm-applet.desktop /etc/xdg/autostart/nm-applet.desktop.bak
+
+else
+
+    echo "RUN AS nonroot $USER"
+
+    [ -d home/ ] && symlink $(pwd)/home ~/
+    [ -d $HOSTNAME/home ] && symlink $(pwd)/$HOSTNAME/home ~/
+
 fi
 
-# Disable network manager too, manage in userspace
-if [ -e /etc/xdg/autostart/nm-applet.desktop ]; then
-    sudo mv /etc/xdg/autostart/nm-applet.desktop /etc/xdg/autostart/nm-applet.desktop.bak
-fi
-
-
-# # https://wiki.archlinux.org/index.php/Xfce#Lock_the_screen
-# xfconf-query -c xfce4-session -p /general/LockCommand -s "lxlock" --create -t string
+# Check for root/nonroot within this script as well.
+[ -f $HOSTNAME/install.sh ] && ./$HOSTNAME/install.sh

@@ -8,4 +8,3 @@ sleep 0.2
 sleep 0.2 # sleep before feh
 
 feh  --bg-fill /home/brandon/github.com/subdavis/dotfiles/images/firefly-upright.png --bg-fill /home/brandon/github.com/subdavis/dotfiles/images/firefly.png
-

@@ -1,11 +1,11 @@
 {
   "window.zoomLevel": 1,
   "files.watcherExclude": {
-    "./.git/objects/**": true,
-    "./.git/subtree-cache/**": true,
-    "./serverless_ingest/node_modules/**": true,
-    "./serverless_ingest/venv/**": true,
-    "./serverless_ingest/.serverless/**": true,
+    "**/.serverless/**": true,
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/*/**": true,
+    "**/venv/**": true,
   },
   "editor.tabSize": 2,
   "files.insertFinalNewline": true,
