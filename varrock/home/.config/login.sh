@@ -3,7 +3,7 @@
 sleep 0.2
 
 # wmctrl -c Plasma
-/home/brandon/github.com/subdavis/dotfiles/xrandr.sh
+/home/brandon/.config/xrandr.sh
 
 sleep 0.2 # sleep before feh
 

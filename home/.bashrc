@@ -120,9 +120,10 @@ if ! shopt -oq posix; then
   fi
 fi
 
-source /home/brandon/.config/brandon/aliases_sh
+source ~/.config/aliases_sh
+
 # added by travis gem
-[ -f /home/brandon/.travis/travis.sh ] && source /home/brandon/.travis/travis.sh
+# [ -f /home/brandon/.travis/travis.sh ] && source /home/brandon/.travis/travis.sh
 
 export GOPATH=$HOME/github.com/go-workspace
 export PATH=$PATH:$GOROOT/bn:$GOPATH/bin:$HOME/apps

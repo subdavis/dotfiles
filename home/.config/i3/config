@@ -172,7 +172,8 @@ bar {
         status_command i3status
         # status_command /home/brandon/.config/i3/i3status.sh
         # tray_output eDP-1
-        tray_output DisplayPort-2
+        # tray_output DisplayPort-2
+        tray_output primary
         position top
         height 34
         font pango:DejaVu Sans Mono 12
@@ -190,10 +191,10 @@ bar {
 # exec --no-startup-id wicd-client --tray &
 
 # flux
-exec --no-startup-id /usr/bin/fluxgui &
+# exec --no-startup-id /usr/bin/fluxgui &
 
 # TWMND
-exec --no-startup-id twmnd &
+# exec --no-startup-id twmnd &
 
 # i3lock
 bindsym Mod1+Shift+s exec --no-startup-id i3lock -i /home/brandon/github.com/subdavis/dotfiles/images/firefly.png -i /home/brandon/github.com/subdavis/dotfiles/images/firefly.png
