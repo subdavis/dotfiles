@@ -46,7 +46,8 @@ bindsym Mod1+Shift+q kill
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym Mod1+d exec --no-startup-id j4-dmenu-desktop
+# bindsym Mod1+d exec --no-startup-id j4-dmenu-desktop
+bindsym Mod1+d exec --no-startup-id ulauncher 
 
 # change focus
 bindsym Mod1+j focus left
