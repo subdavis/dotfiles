@@ -132,5 +132,8 @@ bright () {
 shs() {
   python -m SimpleHTTPServer 7000
 }
+windows() {
+  i3-msg -t get_tree | jq '.. | .window_properties? // empty'
+}
 # alias pass=grepass
 complete -F _pass grepass

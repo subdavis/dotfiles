@@ -1,4 +1,4 @@
-![screenshot](screenshots/dirty.png)
+![screenshot](images/dirty.png)
 
 # dotfiles
 
