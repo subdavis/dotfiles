@@ -1,8 +1,10 @@
-![screenshot](images/dirty.png)
+![screenshot](screenshots/dirty.png)
 
 # dotfiles
 
 A collection of my configuration and other dotfiles.
+
+![colors](screenshots/colors.png)
 
 * KDE Ubuntu + 3-gaps
 * LXDE Ubuntu + i3-gaps
@@ -40,6 +42,8 @@ sudo apt install ukuu
 ```bash
 # Run install to place all the dotfiles in the right places
 ./install.sh
+# Run again with root privileges to move system config into place
+sudo ./install.sh
 ```
 
 ## Setting up i3 on KDE

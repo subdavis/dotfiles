@@ -2,6 +2,7 @@ general {
         output_format = "i3bar"
         colors = true
         interval = 5
+        separator = "⬤"
 }
 
 # order += "ipv6"
@@ -57,7 +58,7 @@ path_exists VPN {
 }
 
 tztime local {
-        format = "%Y-%m-%d %H:%M:%S"
+        format = "%m/%d %I:%M:%S"
 }
 
 load {
@@ -66,7 +67,7 @@ load {
 
 cpu_temperature 0 {
         format = "🔥 %degrees °C"
-        path = "/sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input"
+        path = "/sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input"
         color_good = "#239E32"
         color_bad = "#FFA1BC"
 }

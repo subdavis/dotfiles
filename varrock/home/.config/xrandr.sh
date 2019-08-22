@@ -7,4 +7,6 @@
 # xrandr --output DisplayPort-1 --mode "3840x2160_50.00" --right-of DisplayPort-2
 xrandr --output DisplayPort-1 --rotate right
 xrandr --output DisplayPort-1 --right-of DisplayPort-2
+xrandr --output DisplayPort-1 --pos 3840x0
+xrandr --output DisplayPort-2 --pos 0x840
 xrandr --output DisplayPort-2 --primary
