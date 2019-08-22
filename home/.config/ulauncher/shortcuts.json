@@ -28,5 +28,15 @@
         "is_default_search": true,
         "run_without_argument": false,
         "added": 1566424330.210897
+    },
+    "8e150096-5f84-492f-a550-1b313d016bde": {
+        "id": "8e150096-5f84-492f-a550-1b313d016bde",
+        "name": "PCmanFM",
+        "keyword": "file",
+        "cmd": "pcmanfm $1",
+        "icon": null,
+        "is_default_search": false,
+        "run_without_argument": false,
+        "added": 1566426772.8115063
     }
 }
