@@ -1,6 +1,7 @@
+#!/bin/bash
+
 export VAULT_ADDR=https://vault.kitware.com
 
-alias fucking="sudo";
 alias ls="exa-linux-x86_64";
 
 ssh-start() {
@@ -121,6 +122,16 @@ grepass () {
   else
     pass $@;
   fi
+}
+lexec() {
+  1
+  while IFS= read -r line; do
+    if [[ $line == $1* ]]; then
+      $(sed "s/$1:\s//" <<< $line)
+      echo $AWS_ACCESS_KEY_ID
+      AWS_ACCESS_KEY_ID="FOOOO"
+    fi
+  done
 }
 bright () {
   XRANDR=`xrandr --verbose`
