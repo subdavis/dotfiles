@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Thunderbird
+Comment=Mail/News Client
+Exec=/home/brandon/apps/thunderbird/thunderbird %u
+Icon=thunderbird
+Terminal=false
+Type=Application
+StartupNotify=true
+MimeType=x-scheme-handler/mailto;
