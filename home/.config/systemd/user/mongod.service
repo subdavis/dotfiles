@@ -2,6 +2,7 @@
 Description=Mongodb
 
 [Service]
+EnvironmentFile=/home/brandon/.config/systemd/user/profile.env
 ExecStartPre=-/usr/bin/docker kill mongodb
 ExecStartPre=-/usr/bin/docker rm mongodb
 ExecStartPre=/bin/sleep 1
