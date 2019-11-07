@@ -1,8 +1,9 @@
 #!/bin/bash
 
-export DFPATH=~/github.com/subdavis/dotfiles
+export DFPATH="$(realpath "$(dirname "${BASH_SOURCE[0]}")")"
 
 symlink() {
+    echo "SYNC $1 $2"
     pushd $1 > /dev/null
     for f in $(find . ! -path . | sed "s|^\./||"); do
         if [ -d $f ]; then
@@ -19,8 +20,8 @@ if [ "$USER" == "root" ]; then
 
     echo "RUN AS ROOT"
 
-    [ -d root/ ] && symlink $(pwd)/root /
-    [ -d $HOSTNAME/root ] && symlink $(pwd)/$HOSTNAME/root /
+    [ -d ${DFPATH}/root/ ] && symlink ${DFPATH}/root /
+    [ -d ${DFPATH}/$HOSTNAME/root ] && symlink ${DFPATH}/$HOSTNAME/root /
 
     # Disable light-locker
     [ -e /etc/xdg/autostart/light-locker.desktop ] && mv /etc/xdg/autostart/light-locker.desktop /etc/xdg/autostart/light-locker.desktop.bak
@@ -31,8 +32,8 @@ else
 
     echo "RUN AS nonroot $USER"
 
-    [ -d home/ ] && symlink $(pwd)/home ~/
-    [ -d $HOSTNAME/home ] && symlink $(pwd)/$HOSTNAME/home ~/
+    [ -d ${DFPATH}/home/ ] && symlink ${DFPATH}/home ~/
+    [ -d ${DFPATH}/$HOSTNAME/home ] && symlink ${DFPATH}/$HOSTNAME/home ~/
 
 fi
 
