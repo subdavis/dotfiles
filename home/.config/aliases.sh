@@ -3,6 +3,7 @@
 export VAULT_ADDR=https://vault.kitware.com
 
 alias ls="exa-linux-x86_64";
+alias cat="bat";
 
 ssh-start() {
   eval `ssh-agent -s`
