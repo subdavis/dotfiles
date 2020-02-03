@@ -1,0 +1,16 @@
+[Unit]
+Description=Syncthing
+BindsTo=graphical-session.target
+
+[Service]
+EnvironmentFile=/home/brandon/.config/systemd/user/profile.env
+ExecStartPre=-/usr/bin/docker kill gitlabrunner
+ExecStartPre=-/usr/bin/docker rm gitlabrunner
+ExecStart=/usr/bin/docker run \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v ${MOUNT_ROOT}/gitlab-runner/config:/etc/gitlab-runner \
+  --name gitlabrunner \
+  gitlab/gitlab-runner
+
+[Install]
+WantedBy=default.target

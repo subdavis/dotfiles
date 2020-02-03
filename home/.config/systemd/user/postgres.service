@@ -3,6 +3,7 @@ Description=Postgres
 
 [Service]
 TimeoutStartSec=0
+EnvironmentFile=/home/brandon/.config/systemd/user/profile.env
 ExecStartPre=-/usr/bin/docker kill postgres
 ExecStartPre=-/usr/bin/docker rm postgres
 ExecStart=/usr/bin/docker run --name=postgres \

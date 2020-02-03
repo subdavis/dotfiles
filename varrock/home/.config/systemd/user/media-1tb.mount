@@ -1,0 +1,11 @@
+[Unit]
+Description=/dev/sda1
+
+[Mount]
+What=/dev/sda1
+Where=/media/1tb
+Type=ext4
+Options=defaults,auto,noatime,exec
+
+[Install]
+WantedBy=default.target
