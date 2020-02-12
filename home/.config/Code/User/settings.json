@@ -25,5 +25,7 @@
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "python.jediEnabled": false,
-  "todo-tree.highlights.enabled": true
+  "todo-tree.highlights.enabled": false,
+  "editor.fontFamily": "DejaVu LGC Sans Code",
+  "editor.fontLigatures": true
 }
