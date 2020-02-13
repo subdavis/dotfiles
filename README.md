@@ -24,18 +24,23 @@ sudo apt install neofetch
 sudo apt install mosh
 sudo apt install chromium-browser
 sudo apt install ukuu
+
+python3 -m pip install --user pipx
+python3 -m pipx ensurepath
 ```
 
 ## Other Applications
 
 * [Hub for Git](https://github.com/github/hub/releases)
 * [Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
-* Sublime Text to `/opt/sublime_text/sublime_text`
-* Insync (deb) https://www.insynchq.com/downloads
 * Spotify (snap)
 * Firefox `sudo apt --purge --reinstall install firefox`
 * Postman `/opt/Postman`
 * VS Code
+* [exa](https://the.exa.website/install/linux)
+* [bat](https://github.com/sharkdp/bat)
+* [delta](https://github.com/dandavison/delta)
+* [tmux](https://github.com/tmux/tmux)
 
 # Put stuff in its place
 
@@ -46,17 +51,9 @@ sudo apt install ukuu
 sudo ./install.sh
 ```
 
-## Setting up i3 on KDE
+## Setting DPI elsewhere
 
-* Use the plasma profile from ssdm-greeter, don't select i3.  This is required to use KDE themes from within i3.
-* In KDE theme settings, set `Workspace Theme -> Splash Screen -> None`
-* Set the DPI `xrandr --dpi 144` (deprecated in fabor of Xresources approach)
-
-## Setting DPI elsewhere....
-
-* Sublime text: `"dpi_scale": 2.0` in preferences
-* Firefox: ????
-* Misc: https://wiki.archlinux.org/index.php/HiDPI
+https://wiki.archlinux.org/index.php/HiDPI
 
 ## Various other setup
 
