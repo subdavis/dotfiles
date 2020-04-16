@@ -27,5 +27,10 @@
   "python.jediEnabled": false,
   "todo-tree.highlights.enabled": false,
   "editor.fontFamily": "DejaVu LGC Sans Code",
-  "editor.fontLigatures": true
+  "editor.fontLigatures": true,
+  "gitlens.hovers.currentLine.over": "line",
+  "todo-tree.tree.showScanModeButton": false,
+  "vetur.format.defaultFormatter.js": "prettier-eslint",
+  "vetur.format.defaultFormatter.html": "js-beautify-html",
+  "vetur.experimental.templateInterpolationService": true
 }
