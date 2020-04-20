@@ -4,14 +4,13 @@ BindsTo=graphical-session.target
 
 [Service]
 EnvironmentFile=/home/brandon/.config/systemd/user/profile.env
-ExecStartPre=-/usr/bin/docker kill syncthing
-ExecStartPre=-/usr/bin/docker rm syncthing
-ExecStart=/usr/bin/docker run --restart=always \
-  -v ${MOUNT_ROOT}/syncthing/data:/mnt/data \
-  -v ${MOUNT_ROOT}/syncthing/config:/config \
-  -p 22000:22000 -p 21027:21027/udp -p 8384:8384 \
-  --name syncthing \
-  linuxserver/syncthing
+ExecStart=/usr/bin/podman \
+    run --name=%n \
+    -v ${MOUNT_ROOT}/syncthing/data:/mnt/data \
+    -v ${MOUNT_ROOT}/syncthing/config:/config \
+    -p 22000:22000 -p 21027:21027/udp -p 8384:8384 \
+    --name syncthing \
+    linuxserver/syncthing
 
 [Install]
 WantedBy=default.target
