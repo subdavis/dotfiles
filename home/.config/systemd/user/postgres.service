@@ -4,10 +4,12 @@ Description=Postgres
 [Service]
 TimeoutStartSec=0
 EnvironmentFile=/home/brandon/.config/systemd/user/profile.env
-ExecStart=/usr/bin/podman \
-    run --name=%n \
+ExecStartPre=-/usr/bin/docker kill postgres
+ExecStartPre=-/usr/bin/docker rm postgres
+ExecStart=/usr/bin/docker run --name=postgres \
     -v ${MOUNT_ROOT}/postgres/data:/var/lib/postgresql/data/ \
     -p 5432:5432 \
+    --restart=always \
     postgres
 
 [Install]

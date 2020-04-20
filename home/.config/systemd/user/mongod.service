@@ -3,12 +3,14 @@ Description=Mongodb
 
 [Service]
 EnvironmentFile=/home/brandon/.config/systemd/user/profile.env
+ExecStartPre=-/usr/bin/docker kill mongodb
+ExecStartPre=-/usr/bin/docker rm mongodb
 ExecStartPre=/bin/sleep 1
-ExecStart=/usr/bin/podman \
-    run --name=%n \
+ExecStart=/usr/bin/docker run --name=mongodb \
     -v ${MOUNT_ROOT}/mongodb/:/data/db \
     -p 27017:27017 \
-    docker.io/mongo:latest
+    --restart=always \
+    mongo
 
 [Install]
 WantedBy=default.target
