@@ -147,5 +147,12 @@ shs() {
 windows() {
   i3-msg -t get_tree | jq '.. | .window_properties? // empty'
 }
+vpnup() {
+  pass VPN/${1} | nmcli c up ${1} --ask > /dev/null
+}
+vpndown() {
+  vpnname=`nmcli c | grep vpn | cut -d ' ' -f1`
+  nmcli c down "${vpnname}"
+}
 # alias pass=grepass
 complete -F _pass grepass

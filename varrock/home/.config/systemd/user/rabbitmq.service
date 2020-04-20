@@ -1,0 +1,15 @@
+[Unit]
+Description=Rabbitmq
+BindsTo=graphical-session.target
+
+[Service]
+EnvironmentFile=/home/brandon/.config/systemd/user/profile.env
+ExecStartPre=-/usr/bin/docker kill rabbit
+ExecStartPre=-/usr/bin/docker rm rabbit
+ExecStart=/usr/bin/docker run --rm \
+  --net=host \
+  --name rabbit \
+  rabbitmq:latest
+
+[Install]
+WantedBy=default.target

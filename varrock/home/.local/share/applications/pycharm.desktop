@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Pycharm
+Comment=Code/Editor
+Exec=/home/brandon/apps/pycharm/bin/pycharm.sh
+Icon=pycharm
+Terminal=false
+Type=Application
+StartupNotify=true

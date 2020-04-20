@@ -21,5 +21,16 @@
     "editor.defaultFormatter": "vscode.json-language-features"
   },
   "editor.multiCursorModifier": "alt",
-  "python.linting.flake8Path": "black"
+  "python.linting.flake8Path": "black",
+  "workbench.colorTheme": "Monokai",
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "python.jediEnabled": false,
+  "todo-tree.highlights.enabled": false,
+  "gitlens.hovers.currentLine.over": "line",
+  "editor.fontFamily": "DejaVu LGC Sans Code",
+  "editor.fontLigatures": true,
+  "todo-tree.tree.showScanModeButton": false,
+  "vetur.format.defaultFormatter.js": "prettier-eslint",
+  "vetur.format.defaultFormatter.html": "js-beautify-html"
 }
