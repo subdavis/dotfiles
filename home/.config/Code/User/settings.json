@@ -21,6 +21,5 @@
     "editor.defaultFormatter": "vscode.json-language-features"
   },
   "editor.multiCursorModifier": "alt",
-  "workbench.colorTheme": "Monokai",
   "python.linting.flake8Path": "black"
 }
