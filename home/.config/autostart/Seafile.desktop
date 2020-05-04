@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Seafile
+Comment=Application launcher for Linux
+Categories=GNOME;Utility;
+Exec=env GDK_BACKEND=x11 /usr/bin/seafile-applet
+Icon=seafile
+Terminal=false
+Type=Application
+X-GNOME-Autostart-enabled=true
