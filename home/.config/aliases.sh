@@ -81,6 +81,9 @@ gpush () {
 gpushsu () {
   git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
 }
+gpushfwl () {
+  git push --force-with-lease
+}
 gmirror () {
   mkdir -p ~/github.com/mirrors
   [ -z $1 ] && echo "usage: gmirror new|update" && return;
@@ -153,6 +156,15 @@ vpnup() {
 vpndown() {
   vpnname=`nmcli c | grep vpn | cut -d ' ' -f1`
   nmcli c down "${vpnname}"
+}
+ffgif() {
+  [ -z $1 ] && echo "usage: ffgif <file> <start> <duration> <fps> <width> <output>" && exit
+  ffmpeg -i $1\
+    -ss $2\
+    -t $3\
+    -vf "fps=${4},scale=${5}:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse"\
+    -loop 0\
+    $6
 }
 # alias pass=grepass
 complete -F _pass grepass

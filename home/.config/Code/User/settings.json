@@ -32,5 +32,14 @@
   "editor.fontLigatures": true,
   "todo-tree.tree.showScanModeButton": false,
   "vetur.format.defaultFormatter.js": "prettier-eslint",
-  "vetur.format.defaultFormatter.html": "js-beautify-html"
+  "vetur.format.defaultFormatter.html": "js-beautify-html",
+  "go.formatTool": "gofmt",
+  "go.autocompleteUnimportedPackages": true,
+  "go.goroot": "/usr/local/go",
+  "go.useLanguageServer": true,
+"python.formatting.provider": "black",
+"python.languageServer": "Microsoft",
+"vetur.format.defaultFormatter.ts": "vscode-typescript",
+"vetur.experimental.templateInterpolationService": true,
+"editor.formatOnType": true
 }
