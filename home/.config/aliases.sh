@@ -150,9 +150,17 @@ windows() {
 vpnup() {
   pass VPN/${1} | nmcli c up ${1} --ask > /dev/null
 }
+vpnls() {
+  nmcli c | grep vpn | cut -d ' ' -f1
+}
 vpndown() {
-  vpnname=`nmcli c | grep vpn | cut -d ' ' -f1`
-  nmcli c down "${vpnname}"
+  nmcli c down "${1}"
+}
+wgup() {
+  sudo wg-quick up wg0
+}
+wgdown() {
+  sudo wg-quick down wg0
 }
 # alias pass=grepass
 complete -F _pass grepass

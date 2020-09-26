@@ -41,6 +41,7 @@ python3 -m pipx ensurepath
 * [bat](https://github.com/sharkdp/bat)
 * [delta](https://github.com/dandavison/delta)
 * [tmux](https://github.com/tmux/tmux)
+* [wireguard](https://wireguard.com/install/)
 
 # Put stuff in its place
 
