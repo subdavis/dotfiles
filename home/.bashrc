@@ -121,7 +121,10 @@ if ! shopt -oq posix; then
 fi
 
 source ~/.config/aliases.sh
-source ~/.asdf/asdf.sh
+
+if [ -f  ~/.asdf/asdf.sh ]; then
+    source ~/.asdf/asdf.sh
+fi
 # added by travis gem
 # [ -f /home/brandon/.travis/travis.sh ] && source /home/brandon/.travis/travis.sh
 

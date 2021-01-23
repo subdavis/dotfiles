@@ -64,7 +64,10 @@ sudo update-alternatives --config x-terminal-emulator
 
 # dconf backup and restore
 dconf dump /org/gnome/terminal/ gnome-terminal.conf
-dconf load /org/gnome/termina/ < gnome-terminal.conf
+dconf load /org/gnome/terminal/ < gnome-terminal.conf
+
+dconf dump /org/gnome/desktop/ > gnome-desktop.conf
+dconf load /org/gnome/desktop/ < gnome-desktop.conf
 
 # vpn stuff
 sudo apt install network-manager-openvpn
