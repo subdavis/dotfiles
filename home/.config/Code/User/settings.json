@@ -41,5 +41,6 @@
 "python.languageServer": "Microsoft",
 "vetur.format.defaultFormatter.ts": "vscode-typescript",
 "vetur.experimental.templateInterpolationService": true,
-"editor.formatOnType": true
+"editor.formatOnType": true,
+"git.confirmSync": false
 }

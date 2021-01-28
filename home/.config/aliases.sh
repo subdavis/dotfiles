@@ -157,6 +157,12 @@ vpndown() {
   vpnname=`nmcli c | grep vpn | cut -d ' ' -f1`
   nmcli c down "${vpnname}"
 }
+wgup() {
+  sudo systemctl enable wg-quick@wg0 --now
+}
+wgdown() {
+  sudo systemctl disable wg-quick@wg0 --now
+}
 ffgif() {
   [ -z $1 ] && echo "usage: ffgif <file> <start> <duration> <fps> <width> <output>" && exit
   ffmpeg -i $1\
