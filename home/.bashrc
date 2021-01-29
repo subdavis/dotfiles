@@ -125,15 +125,21 @@ source ~/.config/aliases.sh
 if [ -f  ~/.asdf/asdf.sh ]; then
     source ~/.asdf/asdf.sh
 fi
+
 # added by travis gem
 # [ -f /home/brandon/.travis/travis.sh ] && source /home/brandon/.travis/travis.sh
 
 export GOPATH=$HOME/github.com/go-workspace
 export GOROOT=/usr/local/go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:$HOME/apps:$HOME/.local/bin:
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:$HOME/apps:$HOME/.local/bin:${HOME}/local/.npm-packages/bin
+export PATH=/home/brandon/.pyenv/bin:$PATH
+export USE_GIT_URI
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 alias git=hub
 
@@ -141,3 +147,7 @@ alias git=hub
 #    source ~/github.com/pureline/pureline ~/.pureline.conf
 #    export PS1="$PS1\n~$"
 #fi
+complete -C /usr/local/bin/bit bit
+
+# https://github.com/sickill/stderred
+export LD_PRELOAD="/home/brandon/github.com/stderred/build/libstderred.so${LD_PRELOAD:+:$LD_PRELOAD}"

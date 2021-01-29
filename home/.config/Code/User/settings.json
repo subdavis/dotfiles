@@ -37,10 +37,16 @@
   "go.autocompleteUnimportedPackages": true,
   "go.goroot": "/usr/local/go",
   "go.useLanguageServer": true,
-"python.formatting.provider": "black",
-"python.languageServer": "Microsoft",
-"vetur.format.defaultFormatter.ts": "vscode-typescript",
-"vetur.experimental.templateInterpolationService": true,
-"editor.formatOnType": true,
-"git.confirmSync": false
+  "python.formatting.provider": "black",
+  "python.languageServer": "Pylance",
+  "vetur.format.defaultFormatter.ts": "vscode-typescript",
+  "vetur.experimental.templateInterpolationService": true,
+  "editor.formatOnType": true,
+  "git.confirmSync": false,
+  "editor.formatOnSaveMode": "modifications",
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/venv": true
+  },
+  "workbench.startupEditor": "welcomePage"
 }
