@@ -145,7 +145,7 @@ bright () {
   xrandr --output $ACTIVE_DISPLAY --brightness $BRIGHTNESS
 }
 shs() {
-  python -m SimpleHTTPServer 7000
+  npx http-server ./
 }
 windows() {
   i3-msg -t get_tree | jq '.. | .window_properties? // empty'
@@ -154,8 +154,7 @@ vpnup() {
   pass VPN/${1} | nmcli c up ${1} --ask > /dev/null
 }
 vpndown() {
-  vpnname=`nmcli c | grep vpn | cut -d ' ' -f1`
-  nmcli c down "${vpnname}"
+  vpnname=`nmcli c | grep vpn | cut -d ' ' -f1 | xargs nmcli c down`
 }
 wgup() {
   sudo systemctl enable wg-quick@wg0 --now
@@ -164,13 +163,20 @@ wgdown() {
   sudo systemctl disable wg-quick@wg0 --now
 }
 ffgif() {
-  [ -z $1 ] && echo "usage: ffgif <file> <start> <duration> <fps> <width> <output>" && exit
+  [ -z $1 ] && echo "usage: ffgif <file> <start> <duration> <fps> <width> <output>" && return;
   ffmpeg -i $1\
     -ss $2\
     -t $3\
     -vf "fps=${4},scale=${5}:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse"\
     -loop 0\
     $6
+}
+ffgif2() {
+  [ -z $1 ] && echo "usage ffgif2 <input> <output>" && return;
+  palette="/tmp/palette.png"
+  filters="fps=10,scale=800:-1:flags=lanczos"
+  ffmpeg -v warning -i $1 -vf "$filters,palettegen" -y $palette
+  ffmpeg -v warning -i $1 -i $palette -lavfi "$filters [x]; [x][1:v] paletteuse" -y $2
 }
 # alias pass=grepass
 complete -F _pass grepass

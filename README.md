@@ -42,6 +42,7 @@ python3 -m pipx ensurepath
 * [delta](https://github.com/dandavison/delta)
 * [tmux](https://github.com/tmux/tmux)
 * [asdf](https://asdf-vm.com/#/core-manage-asdf-vm)
+* [stderred](https://github.com/sickill/stderred)
 
 # Put stuff in its place
 
