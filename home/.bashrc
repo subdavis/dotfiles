@@ -2,6 +2,7 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -143,8 +144,6 @@ if command -v pyenv; then
     eval "$(pyenv virtualenv-init -)"
 fi
 
-alias git=hub
-
 #if [ "$TERM" != "linux" ]; then
 #    source ~/github.com/pureline/pureline ~/.pureline.conf
 #    export PS1="$PS1\n~$"
@@ -153,3 +152,9 @@ complete -C /usr/local/bin/bit bit
 
 # https://github.com/sickill/stderred
 export LD_PRELOAD="/home/brandon/github.com/stderred/build/libstderred.so${LD_PRELOAD:+:$LD_PRELOAD}"
+
+# Maybe switch to rootless docker if it's configured on the system
+MAYBE_DOCKER_HOST="/run/user/$(id -g)/docker.sock"
+if [ -S "${MAYBE_DOCKER_HOST}" ]; then
+    export DOCKER_HOST="unix://${MAYBE_DOCKER_HOST}"
+fi
