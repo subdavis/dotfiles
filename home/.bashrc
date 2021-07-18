@@ -2,6 +2,7 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -138,10 +139,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
-alias git=hub
+if command -v pyenv; then
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+fi
 
 #if [ "$TERM" != "linux" ]; then
 #    source ~/github.com/pureline/pureline ~/.pureline.conf
@@ -151,3 +152,9 @@ complete -C /usr/local/bin/bit bit
 
 # https://github.com/sickill/stderred
 export LD_PRELOAD="/home/brandon/github.com/stderred/build/libstderred.so${LD_PRELOAD:+:$LD_PRELOAD}"
+
+# Maybe switch to rootless docker if it's configured on the system
+MAYBE_DOCKER_HOST="/run/user/$(id -g)/docker.sock"
+if [ -S "${MAYBE_DOCKER_HOST}" ]; then
+    export DOCKER_HOST="unix://${MAYBE_DOCKER_HOST}"
+fi
