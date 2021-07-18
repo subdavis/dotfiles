@@ -4,6 +4,11 @@ export VAULT_ADDR=https://vault.kitware.com
 
 alias ls="exa-linux-x86_64";
 alias cat="bat";
+alias dk="docker-compose";
+alias gs="git status";
+alias gc="git commit";
+alias ga="git add -u";
+alias gd="git diff";
 
 ssh-start() {
   eval `ssh-agent -s`
@@ -78,10 +83,10 @@ gpush () {
     git push $o;
   done; 
 }
-gpushsu () {
+gp () {
   git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
 }
-gpushfwl () {
+gpfwl () {
   git push --force-with-lease
 }
 gmirror () {

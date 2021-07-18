@@ -1,5 +1,4 @@
 {
-  "window.zoomLevel": 1,
   "files.watcherExclude": {
     "**/.serverless/**": true,
     "**/.git/objects/**": true,
@@ -39,6 +38,16 @@
   "go.useLanguageServer": true,
   "python.formatting.provider": "black",
   "python.languageServer": "Pylance",
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    // https://github.com/microsoft/vscode-python/issues/1883
+    "editor.formatOnSaveMode": "file",
+    // https://github.com/Microsoft/vscode-python/issues/2301
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true,
+    },
+  },
   "vetur.format.defaultFormatter.ts": "vscode-typescript",
   "vetur.experimental.templateInterpolationService": true,
   "editor.formatOnType": true,
@@ -48,5 +57,20 @@
     "**/node_modules": true,
     "**/venv": true
   },
-  "workbench.startupEditor": "welcomePage"
+  "workbench.startupEditor": "welcomePage",
+  "workbench.editor.decorations.badges": true,
+  "workbench.editor.decorations.colors": true,
+  "liveshare.authenticationProvider": "GitHub",
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
+  "jupyter.alwaysTrustNotebooks": true,
+  "polacode.shadow": "none;",
+  "polacode.transparentBackground": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "window.zoomLevel": 1,
+  "jupyter.widgetScriptSources": [
+    "jsdelivr.com",
+    "unpkg.com"
+  ]
 }
