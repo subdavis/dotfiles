@@ -62,7 +62,7 @@
   "workbench.editor.decorations.colors": true,
   "liveshare.authenticationProvider": "GitHub",
   "workbench.editorAssociations": {
-    "*.ipynb": "jupyter.notebook.ipynb"
+    "*.ipynb": "jupyter-notebook"
   },
   "jupyter.alwaysTrustNotebooks": true,
   "polacode.shadow": "none;",
@@ -72,5 +72,9 @@
   "jupyter.widgetScriptSources": [
     "jsdelivr.com",
     "unpkg.com"
-  ]
+  ],
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  }
 }

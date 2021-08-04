@@ -9,6 +9,9 @@ alias gs="git status";
 alias gc="git commit";
 alias ga="git add -u";
 alias gd="git diff";
+alias gl="git log";
+alias gf="git fetch";
+alias gri="git rebase -i";
 
 ssh-start() {
   eval `ssh-agent -s`
