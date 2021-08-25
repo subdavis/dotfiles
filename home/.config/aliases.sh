@@ -186,5 +186,8 @@ ffgif2() {
   ffmpeg -v warning -i $1 -vf "$filters,palettegen" -y $palette
   ffmpeg -v warning -i $1 -i $palette -lavfi "$filters [x]; [x][1:v] paletteuse" -y $2
 }
+calibre-update() {
+  sudo -v && wget --no-check-certificate -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
+}
 # alias pass=grepass
 complete -F _pass grepass
