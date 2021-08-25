@@ -7,4 +7,4 @@ sleep 0.2
 
 sleep 0.2 # sleep before feh
 
-feh  --bg-fill /home/brandon/.config/images/firefly.png --bg-fill /home/brandon/.config/images/firefly-upright.png
+feh  --bg-fill /home/brandon/.config/images/penguins.jpg --bg-fill /home/brandon/.config/images/penguins-upright.jpg

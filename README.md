@@ -84,6 +84,7 @@ gsettings set org.gnome.shell.extensions.desktop-icons  show-trash false
 gsettings set org.gnome.shell.extensions.desktop-icons  show-home false
 ```
 
+* DejaVu Sans fonts https://dejavu-fonts.github.io/
 * nvidia docker https://github.com/nvidia/nvidia-container-runtime#docker-engine-setup
 * Touchpad Synaptics https://askubuntu.com/questions/773595/how-can-i-disable-touchpad-while-typing-on-ubuntu-16-04-syndaemon-isnt-working
 * dconf backup/restore https://github.com/linuxmint/Cinnamon/wiki/Backing-up-and-restoring-your-cinnamon-settings-(dconf)

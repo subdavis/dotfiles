@@ -47,7 +47,7 @@ bindsym Mod1+Shift+q kill
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym Mod1+d exec --no-startup-id j4-dmenu-desktop
-bindsym Mod1+d exec --no-startup-id ulauncher 
+bindsym Mod1+d exec --no-startup-id ulauncher --no-window-shadow
 
 # change focus
 bindsym Mod1+j focus left
@@ -182,7 +182,7 @@ bar {
         colors {
                 # statusline #00A5FF #that neon blue
                 statusline #EDEC87
-                background #2D3527
+                background #272822
 
                 focused_workspace  #100F0E #EDEC87 #100F0E
         }

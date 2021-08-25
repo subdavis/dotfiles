@@ -4,6 +4,14 @@ export VAULT_ADDR=https://vault.kitware.com
 
 alias ls="exa-linux-x86_64";
 alias cat="bat";
+alias dk="docker-compose";
+alias gs="git status";
+alias gc="git commit";
+alias ga="git add -u";
+alias gd="git diff";
+alias gl="git log";
+alias gf="git fetch";
+alias gri="git rebase -i";
 
 ssh-start() {
   eval `ssh-agent -s`
@@ -78,10 +86,10 @@ gpush () {
     git push $o;
   done; 
 }
-gpushsu () {
+gp () {
   git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
 }
-gpushfwl () {
+gpfwl () {
   git push --force-with-lease
 }
 gmirror () {
@@ -181,4 +189,8 @@ ffgif2() {
 syncpass() {
   pass git pull && pass git push
 }
+calibre-update() {
+  sudo -v && wget --no-check-certificate -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
+}
+# alias pass=grepass
 complete -F _pass grepass
