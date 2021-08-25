@@ -40,8 +40,8 @@
   "python.languageServer": "Pylance",
   "[python]": {
     "editor.formatOnSave": true,
-    "editor.formatOnPaste": true,
     // https://github.com/microsoft/vscode-python/issues/1883
+    "editor.formatOnPaste": false,
     "editor.formatOnSaveMode": "file",
     // https://github.com/Microsoft/vscode-python/issues/2301
     "editor.codeActionsOnSave": {
