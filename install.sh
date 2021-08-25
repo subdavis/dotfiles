@@ -35,6 +35,7 @@ else
     [ -d ${DFPATH}/home/ ] && symlink ${DFPATH}/home ~/
     [ -d ${DFPATH}/$HOSTNAME/home ] && symlink ${DFPATH}/$HOSTNAME/home ~/
 
+    xdg-user-dirs-update
 fi
 
 # Check for root/nonroot within this script as well.

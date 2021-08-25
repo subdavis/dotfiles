@@ -28,7 +28,7 @@
   "python.jediEnabled": false,
   "todo-tree.highlights.enabled": false,
   "gitlens.hovers.currentLine.over": "line",
-  "editor.fontFamily": "DejaVu LGC Sans Code",
+  "editor.fontFamily": "DejaVu Sans Code",
   "editor.fontLigatures": true,
   "todo-tree.tree.showScanModeButton": false,
   "vetur.format.defaultFormatter.js": "prettier-eslint",

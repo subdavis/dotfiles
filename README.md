@@ -70,11 +70,18 @@ dconf load /org/gnome/terminal/ < gnome-terminal.conf
 dconf dump /org/gnome/desktop/ > gnome-desktop.conf
 dconf load /org/gnome/desktop/ < gnome-desktop.conf
 
+dconf dump /org/gnome/desktop/wm/ > gnome-desktop-keybindings.conf
+dconf load /org/gnome/desktop/wm/ < gnome-desktop-keybindings.conf
+
 # vpn stuff
 sudo apt install network-manager-openvpn
 nmcli connection import type openvpn file NAME.ovpn
 nmcli c modify NAME vpn.user-name "value"
 nmcli c up NAME --ask
+
+# Fix ubuntu desktop
+gsettings set org.gnome.shell.extensions.desktop-icons  show-trash false
+gsettings set org.gnome.shell.extensions.desktop-icons  show-home false
 ```
 
 * nvidia docker https://github.com/nvidia/nvidia-container-runtime#docker-engine-setup
