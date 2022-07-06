@@ -94,8 +94,6 @@ fi
 alias ll='ls -alF --git'
 alias la='ls -A'
 alias l='ls -CF'
-alias yarn=/usr/local/bin/yarn
-alias pip=/usr/bin/pip3
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -140,9 +138,12 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 if command -v pyenv; then
-    eval "$(pyenv init --no-rehash -)"
+    eval "$(pyenv init --path)"
+    eval "$(pyenv init -)"
     eval "$(pyenv virtualenv-init -)"
 fi
+
+# echo "$(which python)"
 
 #if [ "$TERM" != "linux" ]; then
 #    source ~/github.com/pureline/pureline ~/.pureline.conf

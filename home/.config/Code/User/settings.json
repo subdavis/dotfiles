@@ -31,7 +31,6 @@
   "editor.fontLigatures": true,
   "todo-tree.tree.showScanModeButton": false,
   "vetur.format.defaultFormatter.js": "prettier-eslint",
-  "vetur.format.defaultFormatter.html": "js-beautify-html",
   "go.formatTool": "gofmt",
   "go.autocompleteUnimportedPackages": true,
   "go.goroot": "/usr/local/go",
@@ -48,7 +47,6 @@
       "source.organizeImports": true,
     },
   },
-  "vetur.format.defaultFormatter.ts": "vscode-typescript",
   "vetur.experimental.templateInterpolationService": true,
   "editor.formatOnType": true,
   "git.confirmSync": false,
@@ -76,5 +74,14 @@
   "notebook.cellToolbarLocation": {
     "default": "right",
     "jupyter-notebook": "left"
-  }
+  },
+  "bracket-pair-colorizer-2.depreciation-notice": false,
+  "editor.formatOnSave": true,
+  "markdownFormatter.enable": false,
+  "markdownFormatter.formatCodes": false,
+  "markdownFormatter.formatULSymbol": false,
+  "[markdown]": {
+    "editor.formatOnSave": false,
+  },
+  "volar.codeLens.references": false
 }

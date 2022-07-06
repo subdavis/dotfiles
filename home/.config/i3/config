@@ -181,10 +181,10 @@ bar {
 
         colors {
                 # statusline #00A5FF #that neon blue
-                statusline #EDEC87
-                background #272822
+                statusline #e7cdec
+                background #160440
 
-                focused_workspace  #100F0E #EDEC87 #100F0E
+                focused_workspace  #100F0E #e7cdec #100F0E
         }
 }
 
@@ -201,8 +201,8 @@ bar {
 bindsym Mod1+Shift+s exec --no-startup-id i3lock -i /home/brandon/.config/images/lock.png
 
 # GAPS
-gaps inner 16
-gaps outer 0
+gaps inner 24
+gaps outer 16
 
 # for_window [class="^.*"] border pixel 0 # leave title bar undrawn
 new_window pixel 2
@@ -224,7 +224,7 @@ bindsym XF86AudioPause exec  --no-startup-id playerctl pause
 bindsym XF86AudioNext exec  --no-startup-id playerctl next
 bindsym XF86AudioPrev exec  --no-startup-id playerctl previous
 
-client.focused #EDEC87 #EDEC87 #000000 #EDEC87 #EDEC87
+client.focused #e7cdec #e7cdec #000000 #e7cdec #e7cdec
 
 # bindsym --release Mod1+c exec --no-startup-id xdotool key --clearmodifiers ctrl+c
 # bindsym --release Mod1+v exec --no-startup-id xdotool key --clearmodifiers ctrl+v

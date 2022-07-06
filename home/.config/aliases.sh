@@ -4,12 +4,15 @@ export VAULT_ADDR=https://vault.kitware.com
 
 alias ls="exa-linux-x86_64";
 alias cat="bat";
+alias d="docker";
 alias dk="docker-compose";
+alias dc="docker-compose";
+# alias ldc="docker-compose";
 alias gs="git status";
 alias gc="git commit";
 alias ga="git add -u";
 alias gd="git diff";
-alias gl="git log";
+alias gl="git for-each-ref --sort=committerdate refs/heads/";
 alias gf="git fetch";
 alias gri="git rebase -i";
 
