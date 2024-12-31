@@ -1,21 +1,25 @@
 #!/bin/bash
-
-export VAULT_ADDR=https://vault.kitware.com
+unalias gp
 
 alias ls="exa";
-alias ll="ls -lah";
+alias ll='ls -alF --git'
+alias la='ls -A'
+alias l='ls -CF'
 alias cat="bat";
 alias d="docker";
 alias dk="docker compose";
 alias dc="docker compose";
 # alias ldc="docker-compose";
-# alias gs="git status";
-# alias gc="git commit";
-# alias ga="git add -u";
-# alias gd="git diff";
-# alias gl="git for-each-ref --sort=committerdate refs/heads/";
-# alias gf="git fetch";
-# alias gri="git rebase -i";
+alias gs="git status";
+alias gc="git commit";
+alias ga="git add -u";
+alias gd="git diff";
+alias gds="git diff --stat"
+alias gl="git for-each-ref --sort=committerdate refs/heads/";
+alias gf="git fetch";
+alias gri="git rebase -i";
+alias ghco="gh pr checkout";
+alias main="git checkout main";
 
 ssh-start() {
   eval `ssh-agent -s`
@@ -84,12 +88,12 @@ extract () {
     echo "'$1' is not a valid file"
   fi
 }
-# gp () {
-#   git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
-# }
-# gpfwl () {
-#   git push --force-with-lease
-# }
+gp () {
+  git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
+}
+gpfwl () {
+  git push --force-with-lease
+}
 gmirror () {
   mkdir -p ~/github.com/mirrors
   [ -z $1 ] && echo "usage: gmirror new|update" && return;
