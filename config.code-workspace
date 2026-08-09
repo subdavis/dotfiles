@@ -1,0 +1,11 @@
+{
+  "folders": [
+    { "name": "pi", "path": "/Users/brandon.davis/.pi" },
+    { "name": "agents", "path": "/Users/brandon.davis/.agents" },
+    { "name": "claude", "path": "/Users/brandon.davis/.claude" },
+    { "name": "config", "path": "/Users/brandon.davis/.config" },
+    { "name": "herdr", "path": "/Users/brandon.davis/.herdr" },
+    { "name": "dotfiles", "path": "." }
+  ],
+  "settings": {}
+}

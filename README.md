@@ -90,3 +90,5 @@ gsettings set org.gnome.shell.extensions.desktop-icons  show-home false
 * dconf backup/restore https://github.com/linuxmint/Cinnamon/wiki/Backing-up-and-restoring-your-cinnamon-settings-(dconf)
 * https://howchoo.com/g/mdy0ngziogm/the-perfect-almost-touchpad-settings-on-linux-2
 * https://superuser.com/questions/223918/ubuntu-permanently-remove-videos-and-public
+
+save

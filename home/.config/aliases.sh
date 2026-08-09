@@ -38,6 +38,12 @@ pysrc() {
 pywinsrc() {
   source Scripts/activate
 }
+pyenv () {
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+
+  pyenv "$@"
+}
 nmcycle() {
   # Restart the network manager service
   sudo service network-manager restart

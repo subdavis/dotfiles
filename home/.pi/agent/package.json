@@ -1,0 +1,8 @@
+{
+    "name": "my-pi",
+    "version": "1.0.0",
+    "type": "module",
+    "dependencies": {
+        "@earendil-works/pi-coding-agent": "^0.83.0"
+    }
+}

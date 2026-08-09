@@ -76,7 +76,7 @@
     "jupyter-notebook": "left"
   },
   "bracket-pair-colorizer-2.depreciation-notice": false,
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "markdownFormatter.enable": false,
   "markdownFormatter.formatCodes": false,
   "markdownFormatter.formatULSymbol": false,

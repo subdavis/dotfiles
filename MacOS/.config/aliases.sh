@@ -1,10 +1,10 @@
 #!/bin/bash
-unalias gp
+unalias gp;
 
-alias ls="exa";
-alias ll='ls -alF --git'
-alias la='ls -A'
-alias l='ls -CF'
+alias ls="lsd";
+alias ll='ls -alF --git';
+alias la='ls -A';
+alias l='ls -CF';
 alias cat="bat";
 alias d="docker";
 alias dk="docker compose";
@@ -14,16 +14,48 @@ alias gs="git status";
 alias gc="git commit";
 alias ga="git add -u";
 alias gd="git diff";
-alias gds="git diff --stat"
+alias gds="git diff --stat";
 alias gl="git for-each-ref --sort=committerdate refs/heads/";
 alias gf="git fetch";
 alias gri="git rebase -i";
-alias ghco="gh pr checkout";
 alias main="git checkout main";
+alias master="git checkout master";
+alias ggs="gh copilot suggest";
+alias gge="gh copilot explain";
+alias code="cursor";
+alias jj="jira issue list --jql 'assignee = currentUser() AND resolution = Unresolved' --plain";
+alias jall="jira issue list --jql 'assignee = currentUser()'";
+alias scandiff="git diff --name-only HEAD --diff-filter=d | xargs snr scan"
+alias docker-start="colima start"
+
+mine() {
+  # If no index is provided, list all PRs for the current user
+  if [ -z "$1" ]; then
+    GH_PAGER=cat gh pr list --author=@me
+    return 0
+  fi
+
+  # Convert the index to an integer and subtract 1
+  local index=$(($1 - 1))
+
+  # 1. Fetch the PR number at the specified index
+  # 2. Use -q (jq) to grab the number field from that specific array element
+  local pr_number=$(gh pr list --author=@me --json number --jq ".[$index].number" 2>/dev/null)
+
+  # Check if we actually got a number back
+  if [ -z "$pr_number" ]; then
+    echo "Error: No PR found at index $index."
+    return 1
+  fi
+
+  echo "Checking out PR #$pr_number..."
+  gh pr checkout "$pr_number"
+}
 
 ssh-start() {
   eval `ssh-agent -s`
 }
+
 ssh-addkeys() {
   for f in ~/.ssh/*_rsa
   do
@@ -94,14 +126,20 @@ gp () {
 gpfwl () {
   git push --force-with-lease
 }
+gup () {
+  if ! git diff --cached --quiet; then
+    git commit -m "wip"
+  fi
+  GIT_SEQUENCE_EDITOR="sed -i '' '2s/^pick/fixup/'" git rebase -i HEAD~2
+}
 gmirror () {
   mkdir -p ~/github.com/mirrors
   [ -z $1 ] && echo "usage: gmirror new|update" && return;
   case $1 in
-    new) 
+    new)
       [ -z $2 ] && echo "usage: gmirror new username oldreponame newreponame" && return;
       git clone --mirror git@github.com:$2/$3.git ~/github.com/mirrors/$4.git
-      pushd . 
+      pushd .
       cd ~/github.com/mirrors/$4.git
       git remote set-url --push origin git@gitlab.com:$2/$4.git
       popd
@@ -193,4 +231,15 @@ syncpass() {
 }
 calibre-update() {
   sudo -v && wget --no-check-certificate -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
+}
+auto-prs-list() {
+  cd ~/github.com/server
+  gh pr list --search 'assignee:@me "[DO NOT MERGE] CI test run for webapp"'
+}
+auto-prs-close() {
+  cd ~/github.com/server
+  gh pr list --search 'assignee:@me "[DO NOT MERGE] CI test run for webapp"' --jq  '.[].number' --json number | xargs -L 1 -p gh pr close --delete-branch
+}
+conf() {
+  code ~/github.com/dotfiles/config.code-workspace ~/AGENTS.md
 }
